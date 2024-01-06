@@ -15,9 +15,16 @@ interface QuestionProps {
 
 export class Question extends Entity<QuestionProps> {
   static create(
-    props: Optional<QuestionProps, 'createdAt'>,
+    props: Optional<QuestionProps, 'createdAt' | 'slug'>,
     id?: UniqueEntityId,
   ) {
-    return new Question({ ...props, createdAt: new Date() }, id)
+    return new Question(
+      {
+        ...props,
+        slug: props.slug ?? Slug.createFromText(props.title),
+        createdAt: new Date(),
+      },
+      id,
+    )
   }
 }
