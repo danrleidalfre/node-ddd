@@ -14,6 +14,10 @@ interface QuestionProps {
 }
 
 export class Question extends Entity<QuestionProps> {
+  get slug() {
+    return this.props.slug
+  }
+
   static create(
     props: Optional<QuestionProps, 'createdAt' | 'slug'>,
     id?: UniqueEntityId,
