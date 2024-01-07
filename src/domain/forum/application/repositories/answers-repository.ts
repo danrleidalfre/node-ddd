@@ -5,5 +5,7 @@ export interface AnswersRepository {
 
   create(answer: Answer): Promise<Answer>
 
+  save(answer: Answer): Promise<Answer>
+
   delete(answer: Answer): Promise<void>
 }

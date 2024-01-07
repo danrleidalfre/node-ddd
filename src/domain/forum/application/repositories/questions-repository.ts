@@ -7,7 +7,7 @@ export interface QuestionsRepository {
 
   create(question: Question): Promise<Question>
 
-  save(question: Question): Promise<void>
+  save(question: Question): Promise<Question>
 
   delete(question: Question): Promise<void>
 }
