@@ -14,6 +14,10 @@ export interface QuestionProps {
 }
 
 export class Question extends Entity<QuestionProps> {
+  get authorId() {
+    return this.props.authorId
+  }
+
   get slug() {
     return this.props.slug
   }
